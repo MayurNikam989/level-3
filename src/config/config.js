@@ -1,7 +1,7 @@
 import { OpenAI } from "openai";
 
 const openai = new OpenAI({
-  apiKey: "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", // Replace with your actual OpenAI API key
+  apiKey: "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", // Replace with your actual OpenAI API key
   dangerouslyAllowBrowser: "true",
 });
 
@@ -10,10 +10,7 @@ export const fetchSurveyQuestions = async (topic) => {
   try {
     const response = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
-      messages: [
-        { role: "system", content: "You are a helpful assistant." },
-        { role: "user", content: prompt },
-      ],
+      messages: [{ role: "user", content: prompt }],
       max_tokens: 100,
     });
 
